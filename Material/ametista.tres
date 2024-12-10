@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dd321pvdayitj"]
+
+[ext_resource type="Texture2D" uid="uid://bpl2wjna5jeav" path="res://textures/amethyst_block.png" id="1_m61q1"]
+
+[resource]
+albedo_texture = ExtResource("1_m61q1")
+metallic = 0.72
+roughness = 0.4
+texture_filter = 2

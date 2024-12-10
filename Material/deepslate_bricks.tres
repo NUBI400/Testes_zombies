@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b5ypjijgnbgoo"]
+
+[ext_resource type="Texture2D" uid="uid://cvm61ssmbtx7" path="res://textures/deepslate_bricks.png" id="1_4fqst"]
+
+[resource]
+albedo_texture = ExtResource("1_4fqst")
+texture_filter = 2

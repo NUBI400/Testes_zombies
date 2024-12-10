@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2wfjisrt85qk"]
+
+[ext_resource type="Material" uid="uid://chttaivnqiff2" path="res://Material/shaders_scrs/Agua_shaders/agua_material.tres" id="1_fb7yu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xjg51"]
+subdivide_width = 400
+subdivide_depth = 400
+orientation = 1
+
+[node name="AguaPlane" type="MeshInstance3D"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_xjg51")
+surface_material_override/0 = ExtResource("1_fb7yu")

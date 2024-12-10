@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://b3p2q6c5e3o6u"]
+
+[ext_resource type="PackedScene" uid="uid://g25e3hdxhd87" path="res://cenas/CENAS COD ZOMBIES/bullet.tscn" id="1_2v30k"]
+[ext_resource type="Script" path="res://scr/SCR COD ZOMBIES/weapon_resource.gd" id="1_lvvgq"]
+
+[resource]
+script = ExtResource("1_lvvgq")
+Weapon_Name = "MagnunPROJETILTEST"
+Activate_Anim = "Magnun Activate"
+Shoot_Anim = "Magnun Shoot"
+Reload_Anim = "Magnun Reload"
+Deactivate_Anim = "Magnun Deactivate"
+Out_Of_Ammo_Anim = "Magnun OOA"
+Melee_Anim = ""
+Drop_Anim = ""
+Current_Ammo = 20
+Reserve_Ammo = 40
+Magazine = 20
+Max_Ammo = 999
+AutoFire = true
+Weapon_Range = 2000
+Damage = 3
+Melee_Damage = 0.0
+Can_Be_Dropped = false
+Projectile_To_Load = ExtResource("1_2v30k")
+Incremental_Reload = false

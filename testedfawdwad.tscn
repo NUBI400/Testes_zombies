@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://di1rb6xhi12xc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6s6mx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_84c0e"]
+sky_top_color = Color(0.442932, 0.643217, 0.921875, 1)
+sky_horizon_color = Color(0.794663, 0.80117, 0.811447, 1)
+
+[sub_resource type="Sky" id="Sky_qu1g5"]
+sky_material = SubResource("ProceduralSkyMaterial_84c0e")
+
+[sub_resource type="Environment" id="Environment_gqfn2"]
+background_mode = 2
+sky = SubResource("Sky_qu1g5")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6s6mx")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gqfn2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 27.4673, 0)
+shadow_enabled = true

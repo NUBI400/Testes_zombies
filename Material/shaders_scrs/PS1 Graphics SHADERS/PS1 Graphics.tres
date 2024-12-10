@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://sx6ygm4bo822"]
+
+[ext_resource type="Shader" path="res://Material/shaders_scrs/PS1 Graphics SHADERS/PS1 Graphics.gdshader" id="1_nyg6s"]
+[ext_resource type="Texture2D" uid="uid://cvm61ssmbtx7" path="res://textures/deepslate_bricks.png" id="2_etj77"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nyg6s")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.1
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_etj77")

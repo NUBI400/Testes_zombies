@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://5cc885cyxmt"]
+
+[ext_resource type="Script" path="res://scr/Player/player_parcour.gd" id="1_26yfp"]
+[ext_resource type="Texture2D" uid="uid://bc4uylnk4xgrj" path="res://assets/CharacterSheet.png" id="1_mb3mh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hviel"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjrqw"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(0, 160, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kerrr"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(16, 160, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlm6p"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(0, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1nvq"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(16, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5grsb"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(32, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qdat"]
+atlas = ExtResource("1_mb3mh")
+region = Rect2(48, 128, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nipkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hviel")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjrqw")
+}],
+"loop": true,
+"name": &"jump1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kerrr")
+}],
+"loop": true,
+"name": &"jump2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlm6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1nvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5grsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qdat")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0mik"]
+size = Vector3(0.103271, 0.176147, 0.105042)
+
+[node name="Player_parcour" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_26yfp")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.161541, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_nipkf")
+animation = &"walk"
+frame_progress = 0.228067
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00188246, 0.0881958, 0.00131226)
+shape = SubResource("BoxShape3D_r0mik")

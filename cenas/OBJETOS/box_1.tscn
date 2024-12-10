@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=4 uid="uid://bjwsr0q01mn6o"]
+
+[ext_resource type="Texture2D" uid="uid://dxsynf14s3j6x" path="res://assets/Modelos/Boxes/cardboard_box1_Box_21-256x256.png" id="1_nak3t"]
+[ext_resource type="Script" path="res://scr/OBJETOS/fisica_target.gd" id="1_ox68g"]
+[ext_resource type="Material" uid="uid://j6b6uf4g3qnq" path="res://Material/shaders_scrs/outline/outline.tres" id="2_7ldj7"]
+[ext_resource type="PackedScene" uid="uid://ce1m7g8530b58" path="res://cenas/interect_system/interactable.tscn" id="3_ysml4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8qp6"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_nak3t")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k1tqw"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1.00001, 1.00001, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v/+/wAAAAD+/wAAAAAAAP7//v///wAA/v8AAP//AAAAAP7/AAAAAAAAAAAAAAAAAAD+////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hjotq"]
+resource_name = "cardboard_box1_Cube"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1.00001, 1.00001, 1),
+"attribute_data": PackedByteArray("8b8ZgPG/GYDxvxmA8b8MwPG/DMDxvwzA438ZgON/GYDjfxmA438MwON/DMDjfwzA8b8mQPG/JkD//xmA8b////G/NAD//wzA1j8ZgON/JkDjfyZA1j8MwON////jfzQA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA0AAQAHABQACgASAAYACgAVABIAFwAMABMAFwAQAAwADwAJAAMADwAWAAkABQAIAAIABQALAAgAEQAAAA4AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_j8qp6"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(3.98785, 3.99439, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/v/+/wAA///+//7/AABU1f7//v8AAP+//v8AAAAAVNX+/wAAAAD///7/AAAAAP+//v/+/////3/+//7///9U1f7//v////+//v8AAP//VNX+/wAA////f/7/AAD///+/AAD+/wAA//8AAP7/AABU1QAA/v8AAP//AAAAAAAAVNUAAAAAAAD//wAAAAAAAP//AAD+/////38AAP7//////wAA/v///1TVAAAAAP///38AAAAA//9U1QAAAAD//////3/+/1TVqir/fwAAVFVUVf9/////fwAA/3///1TVqir/fwAAVFVUVf9/////fwAA/z//f1TVqir/f/7/VFVUVf8//3//f/7//3////8//39U1aoq/3///1RVVFX/P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k1tqw")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_udl6e"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vni20"]
+
+[node name="box1" type="RigidBody3D" groups=["Target"]]
+collision_layer = 8
+collision_mask = 43
+script = ExtResource("1_ox68g")
+highlight_material = ExtResource("2_7ldj7")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_hjotq")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_udl6e")
+
+[node name="Interactable" parent="." instance=ExtResource("3_ysml4")]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+shape = SubResource("BoxShape3D_vni20")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="Interactable"]

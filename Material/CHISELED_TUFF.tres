@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cki1rulvnx6l5"]
+
+[ext_resource type="Texture2D" uid="uid://dd25cmeoede10" path="res://textures/chiseled_tuff_bricks_top.png" id="1_pll0g"]
+
+[resource]
+albedo_texture = ExtResource("1_pll0g")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 2

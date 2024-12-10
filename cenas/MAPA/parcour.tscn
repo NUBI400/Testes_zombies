@@ -1,0 +1,148 @@
+[gd_scene load_steps=15 format=3 uid="uid://xosmonhi5n1f"]
+
+[ext_resource type="PackedScene" uid="uid://ckc6rdcnm70y5" path="res://cenas/OBJETOS/mapinha.tscn" id="1_02hqj"]
+[ext_resource type="Script" path="res://scr/OBJETOS/camera_parcour/Camera.gd" id="2_3434w"]
+[ext_resource type="PackedScene" uid="uid://5cc885cyxmt" path="res://cenas/PLAYER/player_parcour.tscn" id="2_pkt24"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_537a0"]
+ground_bottom_color = Color(0.121465, 0.154087, 0.197541, 1)
+ground_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
+ground_curve = 0.0336358
+
+[sub_resource type="Sky" id="Sky_0r2ph"]
+sky_material = SubResource("ProceduralSkyMaterial_537a0")
+
+[sub_resource type="Environment" id="Environment_tcbxo"]
+background_mode = 2
+sky = SubResource("Sky_0r2ph")
+tonemap_mode = 2
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jqj16"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y123p"]
+size = Vector3(1.95874, 1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1rsj"]
+size = Vector3(2.22449, 1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rfej"]
+size = Vector3(2.27228, 1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3e2l"]
+size = Vector3(2.34073, 1, 0.1)
+
+[sub_resource type="Animation" id="Animation_e8iyq"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_4gtyv"]
+resource_name = "camera"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbgoi"]
+_data = {
+"RESET": SubResource("Animation_e8iyq"),
+"camera": SubResource("Animation_4gtyv")
+}
+
+[node name="Parcour" type="Node3D"]
+
+[node name="EV" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="EV"]
+environment = SubResource("Environment_tcbxo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="EV"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 27.4673, 0)
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="Mapinha" parent="Static" instance=ExtResource("1_02hqj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Paredes" type="Node3D" parent="Static"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Static/Paredes"]
+transform = Transform3D(0.898794, 0, -0.438371, 0, 1, 0, 0.438371, 0, 0.898794, -0.998586, 0, 2.61373)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0570067, 0.494688, 0)
+shape = SubResource("BoxShape3D_y123p")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Static/Paredes"]
+transform = Transform3D(0.869297, 0, 0.494291, 0, 1, 0, -0.494291, 0, 0.869297, 0.987673, 0, 2.51294)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes/StaticBody3D2"]
+transform = Transform3D(0.999752, 0, -0.022286, 0, 1, 0, 0.022286, 0, 0.999752, -0.0758667, 0.494688, 2.38419e-07)
+shape = SubResource("BoxShape3D_q1rsj")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Static/Paredes"]
+transform = Transform3D(0.320415, 0, 0.947277, 0, 1, 0, -0.947277, 0, 0.320415, 2.19425, 0, 1.01567)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0519714, 0.494688, 0)
+shape = SubResource("BoxShape3D_3rfej")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Static/Paredes"]
+transform = Transform3D(0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, -2.18789, 0, 1.18471)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0861969, 0.494688, 0)
+shape = SubResource("BoxShape3D_p3e2l")
+
+[node name="Paredes2" type="Node3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Static/Paredes2"]
+transform = Transform3D(0.898794, 0, -0.438371, 0, 1, 0, 0.438371, 0, 0.898794, -0.998586, 0, 2.61373)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0570067, 0.494688, 0)
+shape = SubResource("BoxShape3D_y123p")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Static/Paredes2"]
+transform = Transform3D(0.869297, 0, 0.494291, 0, 1, 0, -0.494291, 0, 0.869297, 0.987673, 0, 2.51294)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes2/StaticBody3D2"]
+transform = Transform3D(0.999752, 0, -0.022286, 0, 1, 0, 0.022286, 0, 0.999752, -0.0758667, 0.494688, 2.38419e-07)
+shape = SubResource("BoxShape3D_q1rsj")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Static/Paredes2"]
+transform = Transform3D(0.320415, 0, 0.947277, 0, 1, 0, -0.947277, 0, 0.320415, 2.19425, 0, 1.01567)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes2/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0519714, 0.494688, 0)
+shape = SubResource("BoxShape3D_3rfej")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Static/Paredes2"]
+transform = Transform3D(0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, -2.18789, 0, 1.18471)
+physics_material_override = SubResource("PhysicsMaterial_jqj16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Paredes2/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0861969, 0.494688, 0)
+shape = SubResource("BoxShape3D_p3e2l")
+
+[node name="Camera" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(0.999848, 0.00451702, -0.0168577, 0, 0.965926, 0.258819, 0.0174524, -0.25878, 0.965779, -0.0528147, 0.573287, 3.50575)
+fov = 50.0
+script = ExtResource("2_3434w")
+player = NodePath("../Player_parcour")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
+libraries = {
+"": SubResource("AnimationLibrary_tbgoi")
+}
+
+[node name="Player_parcour" parent="." instance=ExtResource("2_pkt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.554924, 0.0298784, 2.35449)

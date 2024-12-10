@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://fba06e4vklan"]
+
+[ext_resource type="Texture2D" uid="uid://d1iwwr5t34bjm" path="res://textures/chiseled_tuff.png" id="1_42jtc"]
+
+[resource]
+albedo_texture = ExtResource("1_42jtc")
+emission = Color(1, 1, 1, 1)
+texture_filter = 2
