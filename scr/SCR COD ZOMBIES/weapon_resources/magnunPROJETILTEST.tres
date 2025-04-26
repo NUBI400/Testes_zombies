@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://b3p2q6c5e3o6u"]
 
 [ext_resource type="PackedScene" uid="uid://g25e3hdxhd87" path="res://cenas/CENAS COD ZOMBIES/bullet.tscn" id="1_2v30k"]
-[ext_resource type="Script" path="res://scr/SCR COD ZOMBIES/weapon_resource.gd" id="1_lvvgq"]
+[ext_resource type="Script" uid="uid://ctjm5otp830r4" path="res://scr/SCR COD ZOMBIES/weapon_resource.gd" id="1_lvvgq"]
 
 [resource]
 script = ExtResource("1_lvvgq")

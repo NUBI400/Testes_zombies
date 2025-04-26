@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://bom3n40lvtdxs"]
 
-[ext_resource type="Script" path="res://scr/Mapas/mapa_testes_vidro.gd" id="1_qnxjo"]
+[ext_resource type="Script" uid="uid://bocaeovjngp4u" path="res://scr/Mapas/mapa_testes_vidro.gd" id="1_qnxjo"]
 [ext_resource type="Texture2D" uid="uid://b3c50ywrscebs" path="res://assets/dust/de_dust2_-_cs_map_2.png" id="1_txq6a"]
 [ext_resource type="PackedScene" uid="uid://07p2s7y8ml1" path="res://cenas/PLAYER/player_testevidro.tscn" id="1_vypmi"]
-[ext_resource type="Shader" path="res://Material/shaders_scrs/vidro/mapa_testes_vidro.gdshader" id="2_8m1mw"]
+[ext_resource type="Shader" uid="uid://ojlyui6mef8c" path="res://Material/shaders_scrs/vidro/mapa_testes_vidro.gdshader" id="2_8m1mw"]
 [ext_resource type="PackedScene" uid="uid://bjwsr0q01mn6o" path="res://cenas/OBJETOS/box_1.tscn" id="2_gja6a"]
 [ext_resource type="PackedScene" uid="uid://1a02pjvn2alw" path="res://cenas/OBJETOS/bola.tscn" id="4_xflcd"]
 [ext_resource type="PackedScene" uid="uid://di1rb6xhi12xc" path="res://testedfawdwad.tscn" id="7_i2fs3"]
@@ -91,8 +91,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qxkqk"]
 _data = {
-"RESET": SubResource("Animation_cwuny"),
-"girando": SubResource("Animation_2llly")
+&"RESET": SubResource("Animation_cwuny"),
+&"girando": SubResource("Animation_2llly")
 }
 
 [node name="Mapa_testes_vidro" type="Node3D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://xosmonhi5n1f"]
 
 [ext_resource type="PackedScene" uid="uid://ckc6rdcnm70y5" path="res://cenas/OBJETOS/mapinha.tscn" id="1_02hqj"]
-[ext_resource type="Script" path="res://scr/OBJETOS/camera_parcour/Camera.gd" id="2_3434w"]
+[ext_resource type="Script" uid="uid://dtrgjcm84vhir" path="res://scr/OBJETOS/camera_parcour/Camera.gd" id="2_3434w"]
 [ext_resource type="PackedScene" uid="uid://5cc885cyxmt" path="res://cenas/PLAYER/player_parcour.tscn" id="2_pkt24"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_537a0"]
@@ -45,8 +45,8 @@ resource_name = "camera"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tbgoi"]
 _data = {
-"RESET": SubResource("Animation_e8iyq"),
-"camera": SubResource("Animation_4gtyv")
+&"RESET": SubResource("Animation_e8iyq"),
+&"camera": SubResource("Animation_4gtyv")
 }
 
 [node name="Parcour" type="Node3D"]

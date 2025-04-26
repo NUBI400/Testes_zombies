@@ -18,7 +18,7 @@ var Player_Pos = null
 var speed = 5
 var Health = 20
 
-var pontos = 10000
+var pontos = 0
 var preço_mp7 = 50
 var preço_revolver = 30
 var preço_shotgun = 70

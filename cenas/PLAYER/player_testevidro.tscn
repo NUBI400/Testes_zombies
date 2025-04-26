@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://07p2s7y8ml1"]
 
-[ext_resource type="Script" path="res://scr/Player/Player_testevidro.gd" id="1_8a7eh"]
-[ext_resource type="Shader" path="res://Material/shaders_scrs/analoghorror_shaders/analog_horror.gdshader" id="3_3nufp"]
+[ext_resource type="Script" uid="uid://c06o612si0sf6" path="res://scr/Player/Player_testevidro.gd" id="1_8a7eh"]
+[ext_resource type="Shader" uid="uid://ps2hycrkf8tb" path="res://Material/shaders_scrs/analoghorror_shaders/analog_horror.gdshader" id="3_3nufp"]
 [ext_resource type="CapsuleMesh" uid="uid://jnw7a33vmv5j" path="res://Material/player_empe.tres" id="4_t4tbj"]
 [ext_resource type="PackedScene" uid="uid://b86vov4y0wslx" path="res://cenas/interect_system/player_interactor.tscn" id="5_l7c47"]
 

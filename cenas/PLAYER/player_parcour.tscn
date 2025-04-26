@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://5cc885cyxmt"]
 
-[ext_resource type="Script" path="res://scr/Player/player_parcour.gd" id="1_26yfp"]
+[ext_resource type="Script" uid="uid://cp3fqagi36wte" path="res://scr/Player/player_parcour.gd" id="1_26yfp"]
 [ext_resource type="Texture2D" uid="uid://bc4uylnk4xgrj" path="res://assets/CharacterSheet.png" id="1_mb3mh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hviel"]

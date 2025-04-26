@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bjwsr0q01mn6o"]
 
 [ext_resource type="Texture2D" uid="uid://dxsynf14s3j6x" path="res://assets/Modelos/Boxes/cardboard_box1_Box_21-256x256.png" id="1_nak3t"]
-[ext_resource type="Script" path="res://scr/OBJETOS/fisica_target.gd" id="1_ox68g"]
+[ext_resource type="Script" uid="uid://ct3l7ugbnkm0s" path="res://scr/OBJETOS/fisica_target.gd" id="1_ox68g"]
 [ext_resource type="Material" uid="uid://j6b6uf4g3qnq" path="res://Material/shaders_scrs/outline/outline.tres" id="2_7ldj7"]
 [ext_resource type="PackedScene" uid="uid://ce1m7g8530b58" path="res://cenas/interect_system/interactable.tscn" id="3_ysml4"]
 
